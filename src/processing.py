@@ -10,9 +10,10 @@ def filter_by_state(data_list: list[dict], state: str = "EXECUTED") -> list[dict
     return mi_list
 
 
-def sort_by_date(list_date: list[dict], date: bool = True) -> list[dict]:
-    """Функция принимает список словарей и необязательный параметр, задающий порядок сортировки
-    и возвращает новый список, отсортированный по дате"""
+def sort_by_date(data_list: list[dict], date: bool = True) -> list[dict]:
+    """Функция принимает список словарей и  параметр, задающий порядок сортировки
+    и возвращает новый список, отсортированный по дате
+    """
 
-    sorted_date = sorted(list_date, key=lambda x: x["date"], reverse=date)
+    sorted_date = sorted(data_list, key=lambda x: x["date"], reverse=date) # сортируем через лямбду по ключу date
     return sorted_date
