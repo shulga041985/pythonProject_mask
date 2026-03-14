@@ -1,19 +1,21 @@
-def filter_by_state(data_list: list[dict], state: str = "EXECUTED") -> list[dict]:
+def filter_by_state(date_list: list[dict], state: str = "EXECUTED") -> list[dict]:
     """
-    Функция принимает список словарей и выводит
-    в зависимости от значения ключа state выбраный список словарей
+    Функция принимает список словарей и опционально значение для ключа state(по умолчанию 'EXECUTED').
+    Функция возвращает новый список словарей, содержащий только те словари, у которых ключ state
+    соответствует указанному значению.
     """
-    mi_list = []  # создаем пустой список
-    for item in data_list:  # перебераем прилетевший список
+    generated_list = []  # создаем пустой список
+    for item in date_list:  # перебераем прилетевший список
         if item.get("state") == state:  # проверяем зависимость ключа к условию
-            mi_list.append(item)  # добавляем словарь в список
-    return mi_list
+            generated_list.append(item)  # добавляем словарь в список
+    return generated_list
 
 
-def sort_by_date(data_list: list[dict], date: bool = True) -> list[dict]:
-    """Функция принимает список словарей и  параметр, задающий порядок сортировки
-    и возвращает новый список, отсортированный по дате
+def sort_by_date(date_list: list[dict], date: bool = True) -> list[dict]:
+    """
+    Функция принимает список словарей и необязательный параметр, задающий порядок сортировки (по умолчанию — убывание).
+    Функция возвращает новый список, отсортированный по дате (date).
     """
 
-    sorted_date = sorted(data_list, key=lambda x: x["date"], reverse=date) # сортируем через лямбду по ключу date
+    sorted_date = sorted(date_list, key=lambda x: x["date"], reverse=date)  # сортируем через лямбду по ключу date
     return sorted_date
