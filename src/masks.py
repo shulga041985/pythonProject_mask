@@ -11,7 +11,6 @@ def get_mask_card_number(card_number: int) -> str:
     return result
 
 
-
 def get_mask_account(mask_account: int) -> str:
     """
     Принимает на вход номер счета и маскирует
