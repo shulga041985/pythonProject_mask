@@ -5,7 +5,7 @@ def mask_account_card(card_details: str) -> str:
     """Принимает  номер счёта или карты, маскировка в зависимости от данных"""
     part_name = card_details.split()  # разбиваем по пробелу
     if part_name[-1].isdigit():  # забираем -1 индекс и проверяем что только цифры
-        number = int(part_name[-1])  # оборачиваем в целые числа
+        number = str(part_name[-1])  # оборачиваем в целые числа
     else:
         return "Номер не состоит из цифр, введите корректный номер"
     initials = " ".join(part_name[:-1])  # делаем срез до - 1 индекса
