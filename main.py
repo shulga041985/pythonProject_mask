@@ -3,7 +3,7 @@ from src.processing import filter_by_state, sort_by_date
 
 """Для маскировки карты и счета"""
 
-card_details = "счет 1254325698567854"  # номера карты или счета
+card_details = "cxtn 12345678912345678912"  # номера карты или счета
 masked_card = mask_account_card(card_details)
 
 print(masked_card)
