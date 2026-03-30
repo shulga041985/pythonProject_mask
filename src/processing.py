@@ -5,9 +5,11 @@ def filter_by_state(date_list: list[dict], state: str = "EXECUTED") -> list[dict
     соответствует указанному значению.
     """
     generated_list = []  # создаем пустой список
-    for item in date_list:  # перебераем прилетевший список
+    for item in date_list:  # перебираем прилетевший список
         if item.get("state") == state:  # проверяем зависимость ключа к условию
             generated_list.append(item)  # добавляем словарь в список
+    if not generated_list:  # если generated_list пуст
+        return []
     return generated_list
 
 
