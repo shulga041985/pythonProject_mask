@@ -32,7 +32,7 @@ def test_fixture_account_card(card: list[tuple]) -> None:
         ("", "Некорректный формат данных, проверьте ввод."),
     ],
 )
-def test_parametrize_account_card(card_details: str, expected: str)-> None:
+def test_parametrize_account_card(card_details: str, expected: str) -> None:
     result = mask_account_card(card_details)
     assert result == expected
 

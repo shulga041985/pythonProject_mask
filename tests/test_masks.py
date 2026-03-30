@@ -47,7 +47,6 @@ def test_get_mask_account() -> None:
     assert get_mask_account("") == "Не корректный ввод номера счета."
 
 
-
 # Проверка с фикстурой
 def test_fixture_account_number(account_number: list[tuple]) -> None:
     for acc_number, expected in account_number:
