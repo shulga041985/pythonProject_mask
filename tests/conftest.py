@@ -73,9 +73,6 @@ def sample_data() -> list[dict]:
     ]
 
 
-from typing import List, Dict
-
-
 @pytest.fixture
 def three_letters_str() -> str:
     return "asa"
@@ -87,17 +84,17 @@ def empty_str() -> str:
 
 
 @pytest.fixture
-def empty_list() -> List:
+def empty_list() -> list:
     return []
 
 
 @pytest.fixture
-def three_letters_list() -> List:
+def three_letters_list() -> list:
     return ["asa"]
 
 
 @pytest.fixture
-def transactions() -> List[Dict]:
+def transactions() -> list[dict]:
     """Фикстура с тестовыми транзакциями"""
     return [
         {

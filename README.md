@@ -61,6 +61,19 @@ https://github.com/shulga041985/pythonProject_mask.git
 
 Сортирует список операций по дате убывания или возрастания при помощи True или False
 
++ Модуль generators
+Функция-генератор фильтрации операций по типу валюты например USD:
+
+**filter_by_currency**
+
+Генератор описания операций :
+
+**transaction_descriptions** 
+
+Генератор номеров банковских карт :
+
+**card_number_generator**
+
 ## Тестирование:
   
 
