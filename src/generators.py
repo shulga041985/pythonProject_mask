@@ -1,4 +1,7 @@
-def filter_by_currency(dict_base: list[dict], currency: str) -> dict:
+from typing import Dict, Iterator, List
+
+
+def filter_by_currency(dict_base: List[Dict], currency: str) -> Iterator[Dict]:
     """Функция-генератор фильтрации операций по типу валюты"""
 
     if not dict_base:
@@ -8,7 +11,7 @@ def filter_by_currency(dict_base: list[dict], currency: str) -> dict:
             yield transaction
 
 
-def transaction_descriptions(dict_base: list[dict]) -> str:
+def transaction_descriptions(dict_base: List[Dict]) -> Iterator[str]:
     """Генератор описания операций"""
 
     if not dict_base:
@@ -21,7 +24,7 @@ def transaction_descriptions(dict_base: list[dict]) -> str:
         yield description
 
 
-def card_number_generator(start: int, end: int) -> str:
+def card_number_generator(start: int, end: int) -> Iterator[str]:
     """Генератор номеров банковских карт"""
 
     if start < 1 or end > 9999999999999999:
