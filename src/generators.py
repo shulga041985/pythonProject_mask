@@ -37,5 +37,4 @@ def card_number_generator(start: int, end: int) -> Iterator[str]:
         # Преобразуем число в строку и дополняем нулями слева до 16 цифр
         card_number = str(number).zfill(16)
         formatted_number = f"{card_number[:4]} {card_number[4:8]} {card_number[8:12]} {card_number[12:16]}"
-
         yield formatted_number
