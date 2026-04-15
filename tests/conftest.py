@@ -1,6 +1,7 @@
 import pytest
 from pathlib import Path
-from typing import  Generator
+from typing import Generator
+
 
 # фикстура для модуля masks.py функция маскировки номера карт get_mask_card_number
 @pytest.fixture
