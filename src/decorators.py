@@ -4,6 +4,8 @@ from typing import Any, Callable, Optional
 
 
 def log(filename: Optional[str] = None) -> Callable:
+    """Декоратор для фиксации запуска и выполнении функции"""
+
     def decorator(func: Any) -> Callable:
         @wraps(func)
         def wrappers(*args: Any, **kwargs: Any) -> Any:
