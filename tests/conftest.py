@@ -1,4 +1,6 @@
 import pytest
+from pathlib import Path
+from typing import Generator
 
 
 # фикстура для модуля masks.py функция маскировки номера карт get_mask_card_number
@@ -143,3 +145,16 @@ def transactions() -> list[dict]:
             "to": "Счет 14211924144426031657",
         },
     ]
+
+
+@pytest.fixture
+def log_filename() -> Generator:
+    """Создает файл mylog.txt в корневой папке проекта"""
+    temp_files_path = Path.cwd()
+    filename = temp_files_path / "mylog.txt"
+
+    # Создаем или очищаем файл
+    with open(filename, "w") as f:
+        f.write("")
+
+    yield str(filename)  # Возвращаем строковый путь
